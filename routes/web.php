@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/','Admin\ServerController@index');
 
 //客户服务管理
 Route::prefix('server')->group(function(){
@@ -24,7 +23,4 @@ Route::prefix('index/')->group(function(){
     Route::any('index/','Admin\IndexController@index');
 });
 
-Route::get('/admin', function () {
-    echo 111;
-});
 
