@@ -29,6 +29,6 @@ Route::prefix('/index')->middleware('login')->group(function(){
 
 });
 
-Route::prefix('customers/')->group(function(){
+Route::prefix('customers/')->middleware('login')->group(function(){
     Route::any('create/','Admin\CustomersController@create');//添加视图
 });
