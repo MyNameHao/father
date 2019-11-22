@@ -45,7 +45,7 @@ try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
 
 		欢迎使用
 		<strong class="green">
-			安居客房源系统
+			客户关系管理信息系统
 		<small>(v1.2)</small>
 		</strong>
 		,这里为你提供更更全面的房源信息管理.	
