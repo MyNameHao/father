@@ -23,3 +23,7 @@ Route::get('/admin', function () {
     echo 111;
 });
 
+/*客户信息管理*/
+Route::prefix('customers/')->group(function(){
+    Route::any('create/','Admin\CustomersController@create');//添加视图
+});
