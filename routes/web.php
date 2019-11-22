@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/','Admin\ServerController@index');
+
+//客户服务管理
+Route::prefix('server')->group(function(){
+    Route::any('/create','admin\ServerController@create');//添加页面
+    Route::any('/save','admin\ServerController@save');//添加方法
+
 });
