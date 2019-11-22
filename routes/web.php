@@ -29,7 +29,6 @@ Route::prefix('/index')->middleware('login')->group(function(){
 
 });
 
-/*客户信息管理*/
-Route::prefix('customers/')->middleware('login')->group(function(){
+Route::prefix('customers/')->group(function(){
     Route::any('create/','Admin\CustomersController@create');//添加视图
 });
