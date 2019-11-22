@@ -4,14 +4,10 @@ namespace App\model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AreaModel extends Model
+class Admin extends Model
 {
-<<<<<<< HEAD
-    //
-}
-=======
-    public $primaryKey='id';
+    public $primaryKey='c_id';
     protected $guarded = [];
-    public $table='area';
+    public $table='admin';
     public $timestamps=false;
->>>>>>> liu
+}
