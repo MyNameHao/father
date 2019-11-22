@@ -147,57 +147,17 @@
 
 							<ul class="submenu">
 								<li>
-									<a href="release.html">
+									<a href="{{url('customers/create')}}">
 										<i class="icon-double-angle-right"></i>
-										发布房源
+										客户信息添加
 									</a>
 								</li>
 
 								<li>
 									<a href="record.html">
 										<i class="icon-double-angle-right"></i>
-										发布记录
+										客户信息列表
 									</a>
-								</li>
-
-								<li>
-									<a href="refresh.html">
-										<i class="icon-double-angle-right"></i>
-										刷新记录
-									</a>
-								</li>
-
-								<li>
-									<a href="copy.html">
-										<i class="icon-double-angle-right"></i>
-										复制房源
-									</a>
-								</li>
-
-								<li>
-									<a href="#" class="dropdown-toggle">
-										<i class="icon-double-angle-right"></i>
-
-										账号设置
-										<b class="arrow icon-angle-down"></b>
-									</a>
-
-									<ul class="submenu">
-										<li>
-											<a href="account.html">
-												<i class="icon-leaf"></i>
-												账号记录
-											</a>
-										</li>
-
-										<li>
-											<a href="addaccount.html">
-												<i class="icon-leaf"></i>
-												添加账号
-											</a>
-										</li>
-
-									</ul>
 								</li>
 							</ul>
 						</li>
@@ -404,7 +364,7 @@
 							</div><!-- /.col -->
 						</div><!-- /.row -->
 					</div><!-- /.page-content -->
-				</div><!-- /.main-content -->
+				
 
 				<div class="ace-settings-container" id="ace-settings-container">
 					<div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">

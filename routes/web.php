@@ -16,10 +16,10 @@ Route::get('/', function () {
 });
 
  //登陆
-Route::view('/admin/login','admin.login');
+Route::view('/admin/login','login.login');
 
 //登陆
-Route::get('/admin/logindo','Admin\IndexController@logindo');
+Route::post('/admin/logindo','Admin\IndexController@logindo');
 
 
 
@@ -30,3 +30,6 @@ Route::prefix('/index')->middleware('login')->group(function(){
 });
 
 
+Route::prefix('customers/')->group(function(){
+    Route::any('create/','Admin\CustomersController@create');//添加视图
+});

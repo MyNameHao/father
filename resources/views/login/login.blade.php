@@ -12,16 +12,16 @@
     <title>Login</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/static/admin/assets/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- MetisMenu CSS -->
     <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/assets/css//sb-admin-2.css" rel="stylesheet">
+    <link href="/static/admin/assets/css//sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->`
-	<link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="/static/admin/assets/css/font-awesome.min.css" />
 
 
 </head>
@@ -36,11 +36,11 @@
                         <h3 class="panel-title">微商场后台管理登录</h3>
                     </div>
                     <div class="panel-body">
-                        <form  action="{{url('admin/logindo')}}" method="post">
+                        <form  action="{{url('admin/logindo')}}"  method="post">
                             @csrf
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="手机号" name="c_accountt"  >
+                                    <input class="form-control" placeholder="手机号" name="c_account"  >
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="密码" name="c_pwd" type="password" value="">
