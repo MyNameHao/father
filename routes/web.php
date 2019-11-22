@@ -29,7 +29,11 @@ Route::prefix('/index')->middleware('login')->group(function(){
 
 });
 
+<<<<<<< HEAD
 
+=======
+/*客户信息管理*/
+>>>>>>> 1b06f1783219cfe5d66e52110aed830f1abf38db
 Route::prefix('customers/')->group(function(){
     Route::any('create/','Admin\CustomersController@create');//添加视图
 });
