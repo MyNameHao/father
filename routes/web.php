@@ -19,3 +19,12 @@ Route::prefix('server')->group(function(){
     Route::any('/save','admin\ServerController@save');//添加方法
 
 });
+
+Route::prefix('index/')->group(function(){
+    Route::any('index/','Admin\IndexController@index');
+});
+
+Route::get('/admin', function () {
+    echo 111;
+});
+
