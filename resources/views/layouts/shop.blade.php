@@ -65,7 +65,7 @@
 								<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>欢迎光临,</small>
-									ADMIN
+									@if (session('user')) {{session('user.c_name')}} @else *** @endif
 								</span>
 
 								<i class="icon-caret-down"></i>

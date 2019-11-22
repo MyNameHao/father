@@ -15,11 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('index/')->group(function(){
-    Route::any('index/','Admin\IndexController@index');
+ //登陆
+Route::view('/admin/login','admin.login');
+
+//登陆
+Route::get('/admin/logindo','Admin\IndexController@logindo');
+
+
+
+//首页
+Route::prefix('/index')->middleware('login')->group(function(){
+    Route::any('/index','Admin\IndexController@index');
+
 });
 
-Route::get('/admin', function () {
-    echo 111;
-});
 

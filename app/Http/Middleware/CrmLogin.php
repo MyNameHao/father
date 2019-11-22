@@ -16,8 +16,9 @@ class CrmLogin
     public function handle($request, Closure $next)
     {
 
-
-
+        if (!session('user')) {
+            echo  "<script>location.href='/admin/login';alert('请先登陆')</script>";
+        }
         return $next($request);
     }
 }
