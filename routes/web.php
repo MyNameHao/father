@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('index/')->group(function(){
+    Route::any('index/','Admin\IndexController@index');
+});
+
+Route::get('/admin', function () {
+    echo 111;
+});
+
