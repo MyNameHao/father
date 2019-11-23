@@ -37,7 +37,6 @@ Route::prefix('/index')->middleware('login')->group(function(){
 
 });
 
-<<<<<<< HEAD
 Route::prefix('customers/')->middleware('login')->group(function(){
     Route::any('create/','Admin\CustomersController@create');//添加视图
     Route::any('areas/','Admin\CustomersController@areas');//三级联动
@@ -47,9 +46,8 @@ Route::prefix('customers/')->middleware('login')->group(function(){
     Route::any('edit/{id}','Admin\CustomersController@edit');//列表展示
     Route::any('update/{id}','Admin\CustomersController@update');//列表展示
 });
-=======
 //联系人
-Route::prefix('link')->group(function(){
+Route::prefix('link')->middleware('login')->group(function(){
     Route::any('index','Admin\LinkmanController@index');//联系人添加页面
     Route::post('save','Admin\LinkmanController@save');//添加执行t
     Route::any('list','Admin\LinkmanController@list');//列表展示
@@ -58,4 +56,3 @@ Route::prefix('link')->group(function(){
     Route::any('delete/{id}','Admin\LinkmanController@delete');//删除执行
 });
 
->>>>>>> wzd
