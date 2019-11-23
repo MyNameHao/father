@@ -13,7 +13,7 @@ class CustomersController extends Controller
 {
     /*展示视图*/
     public function create(){
-<<<<<<< HEAD
+
         $typeInfo=TypeModel::get();
         $customerInfo=CustomerModel::get();
         $areas=AreaModel::where('pid',0)->get();
@@ -89,12 +89,6 @@ class CustomersController extends Controller
         }else{
             return redirect('customers/index');
         }
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> 1b06f1783219cfe5d66e52110aed830f1abf38db
         return view('customers.create');
->>>>>>> 3c44ec8742fcc98e2d4fe5e225574cf7d4632bb0
     }
 }
