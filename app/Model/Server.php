@@ -4,7 +4,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Sever extends Model
+class Server extends Model
 {
     protected $table="server";
 

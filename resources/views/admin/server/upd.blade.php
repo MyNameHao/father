@@ -21,14 +21,14 @@
 
 									<div class="col-xs-12">
 
-                                    <form class="form-horizontal" role="form" action="{{url('server/save')}}"  method="post">
+                                    <form class="form-horizontal" role="form" action="{{url('server/upd_do/'.$data->s_id)}}"  method="post">
                                         @csrf
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 联系人 </label>
 
 
 										<div class="col-sm-9">
-											<input type="text" id="form-field-1" placeholder="联系人" name="l_name" class="col-xs-10 col-sm-5" />
+											<input type="text" id="form-field-1" placeholder="联系人" value="{{$data->l_name}}" name="l_name" class="col-xs-10 col-sm-5" />
 										</div>
 									</div>
 
@@ -41,7 +41,7 @@
 
 
 										<div class="col-sm-9">
-											<input type="text" id="form-field-2" placeholder="客户名称" name="c_name" class="col-xs-10 col-sm-5" />
+											<input type="text" id="form-field-2" placeholder="客户名称" value="{{$data->c_name}}" name="c_name" class="col-xs-10 col-sm-5" />
 										</div>
 									</div>
 
@@ -71,7 +71,7 @@
 
 
 														<div class="col-sm-9">
-															<input type="text" name="s_cost">
+															<input type="text" name="s_cost" value="{{$data->s_cost}}">
 															</div>
                                     </div>
                                     
@@ -80,7 +80,7 @@
 
 
 														<div class="col-sm-9">
-															<textarea name="s_desc"></textarea>
+															<textarea name="s_desc">{{$data->s_desc}}</textarea>
 															</div>
 									</div>
 
@@ -104,7 +104,7 @@
 										<div class="col-md-offset-3 col-md-9">
 											<button class="btn btn-info">
 												<i class="icon-ok bigger-110"></i>
-												增加
+												修改
 											</button>
 
 

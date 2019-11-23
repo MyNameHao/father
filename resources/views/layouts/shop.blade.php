@@ -244,16 +244,16 @@
 
 							<ul class="submenu">
 								<li>
-									<a href="form-elements.html">
+									<a href="{{url('server/create')}}">
 										<i class="icon-double-angle-right"></i>
-										发布公告
+										客户添加
 									</a>
 								</li>
 
 								<li>
-									<a href="form-wizard.html">
+									<a href="{{url('server/index')}}">
 										<i class="icon-double-angle-right"></i>
-										进入论坛
+										客户列表
 									</a>
 								</li>
 
