@@ -154,7 +154,7 @@
 								</li>
 
 								<li>
-									<a href="record.html">
+									<a href="{{url('customers/index')}}">
 										<i class="icon-double-angle-right"></i>
 										客户信息列表
 									</a>

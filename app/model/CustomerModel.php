@@ -6,12 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class CustomerModel extends Model
 {
-<<<<<<< HEAD
-    //
-=======
     public $primaryKey='c_id';
-    protected $guarded = [];
+    protected $guarded = ['c_id'];
     public $table='customer';
     public $timestamps=false;
->>>>>>> liu
 }

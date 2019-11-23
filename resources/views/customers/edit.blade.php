@@ -24,12 +24,12 @@
 			<div class="page-content">
 				<div class="row">
 				<div class="col-xs-12">
-			<form action="{{url('customers/store')}}" method="post" class="form-horizontal" role="form">
+			<form action="{{url('customers/update/'.$data->c_id)}}" method="post" class="form-horizontal" role="form">
 				@csrf
 					<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 客户名称 </label>
 						<div class="col-sm-9">
-							<input type="text" id="form-field-1" placeholder="请输入客户名称" name="c_name" class="col-xs-10 col-sm-5" />
+							<input type="text" id="form-field-1" placeholder="请输入客户名称" value="{{$data->c_name}}" name="c_name" class="col-xs-10 col-sm-5" />
 						</div>
 				</div>
 				
@@ -38,21 +38,21 @@
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> 客户电话 </label>
 				<div class="col-sm-9">
-					<input type="text" id="form-field-2" placeholder="请输入客户电话" name="c_tel" class="col-xs-10 col-sm-5" />
+					<input type="text" id="form-field-2" placeholder="请输入客户电话" value="{{$data->c_tel}}" name="c_tel" class="col-xs-10 col-sm-5" />
 				</div>
 			</div>
 			
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> 客户网址 </label>
 				<div class="col-sm-9">
-					<input type="text" id="form-field-2" placeholder="请输入网址" name="c_url" class="col-xs-10 col-sm-5" />
+					<input type="text" id="form-field-2" placeholder="请输入网址" value="{{$data->c_url}}"  name="c_url" class="col-xs-10 col-sm-5" />
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> 客户电子邮件 </label>
 				<div class="col-sm-9">
-					<input type="text" id="form-field-2" placeholder="请输入客户电子邮件" name="c_email" class="col-xs-10 col-sm-5" />
+					<input type="text" id="form-field-2" placeholder="请输入客户电子邮件" value="{{$data->c_email}}"  name="c_email" class="col-xs-10 col-sm-5" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -62,17 +62,33 @@
 						<td colspan="3" style="font-family:'宋体';">
 							<select class="area" name="c_sheng">
 								<option value="" selected="selected">请选择...</option>
-								@foreach($areas as $v)
-								<option value="{{$v->id}}">{{$v->name}}</option>
+								@foreach($provinceInfo as $v)
+                                    @if($data->c_sheng==$v->id)
+                                        <option value="{{$v->id}}" selected>{{$v->name}}</option>
+                                    @else
+                                        <option value="{{$v->id}}">{{$v->name}}</option>
+                                    @endif
 								@endforeach
 							</select>
 							<select class="area" name="c_shi">
-								<option value="" selected="selected">请选择...</option>
-								<option value=""></option>
+                            <option value="" selected="selected">请选择...</option>
+								@foreach($cityInfo as $v)
+                                    @if($data->c_shi==$v->id)
+                                        <option value="{{$v->id}}" selected>{{$v->name}}</option>
+                                    @else
+                                        <option value="{{$v->id}}">{{$v->name}}</option>
+                                    @endif
+								@endforeach
 							</select>
 							<select class="area" name="c_qu">
 								<option value="" selected="selected">请选择...</option>
-								<option value=""></option>
+                                @foreach($areaInfo as $v)
+                                    @if($data->c_qu==$v->id)
+                                        <option value="{{$v->id}}" selected>{{$v->name}}</option>
+                                    @else
+                                        <option value="{{$v->id}}">{{$v->name}}</option>
+                                    @endif
+								@endforeach
 							</select>
 						（必填）
 						</td>
@@ -83,7 +99,7 @@
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> 详细地址 </label>
 				<div class="col-sm-9">
-					<input type="text" id="form-field-2" placeholder="请输入客户详细地址" name="c_area" class="col-xs-10 col-sm-5" />
+					<input type="text" id="form-field-2" placeholder="请输入客户详细地址" value="{{$data->c_area}}"  name="c_area" class="col-xs-10 col-sm-5" />
 				</div>
 			</div>
 
@@ -98,7 +114,11 @@
 				<select name="t_id">
 					<option value="">--请选择--</option>
 					@foreach($typeInfo as $v)
-						<option value="{{$v->t_id}}">{{$v->t_name}}</option>
+                        @if($data->t_id==$v->t_id)
+                            <option value="{{$v->t_id}}" selected>{{$v->t_name}}</option>
+                        @else 
+                            <option value="{{$v->t_id}}">{{$v->t_name}}</option>
+                        @endif
 					@endforeach
 				</select>
 			</div>
@@ -111,7 +131,11 @@
 			<select name="cus_id">
 				<option value="">--请选择--</option>
 				@foreach($customerInfo as $v)
-					<option value="{{$v->cus_id}}">{{$v->cus_name}}</option>
+                    @if($data->cus_id==$v->cus_id)
+                        <option value="{{$v->cus_id}}" selected>{{$v->cus_name}}</option>
+                    @else   
+                        <option value="{{$v->cus_id}}">{{$v->cus_name}}</option>
+                    @endif
 				@endforeach
 			</select>
 		</div>
@@ -123,7 +147,7 @@
 
 				<div class="col-sm-9">
 					<div class="input-group" style="width:150px;">
-						<textarea name="c_desc" cols="30" rows="10"></textarea>
+						<textarea name="c_desc" cols="30" rows="10">{{$data->c_desc}}</textarea>
 					</div>
 				</div>
 			</div>
@@ -131,7 +155,7 @@
 				<div class="col-md-offset-3 col-md-9">
 					<button class="btn btn-info" type="submit">
 						<i class="icon-ok bigger-110"></i>
-						增加
+						编辑成功
 					</button>
 
 
