@@ -15,16 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('index/')->group(function(){
-    Route::any('index/','Admin\IndexController@index');
+ //登陆
+Route::view('/admin/login','login.login');
+
+//登陆
+Route::post('/admin/logindo','Admin\IndexController@logindo');
+
+
+
+//首页
+Route::prefix('/index')->middleware('login')->group(function(){
+    Route::any('/index','Admin\IndexController@index');
+
 });
 
-Route::get('/admin', function () {
-    echo 111;
-});
-
-/*客户信息管理*/
-Route::prefix('customers/')->group(function(){
+Route::prefix('customers/')->middleware('login')->group(function(){
     Route::any('create/','Admin\CustomersController@create');//添加视图
     Route::any('areas/','Admin\CustomersController@areas');//三级联动
     Route::any('store/','Admin\CustomersController@store');//执行添加
