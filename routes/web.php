@@ -35,10 +35,7 @@ Route::post('/admin/logindo','Admin\IndexController@logindo');
 Route::prefix('/index')->middleware('login')->group(function(){
     Route::any('/index','Admin\IndexController@index');
 
-<<<<<<< HEAD
-=======
 });
->>>>>>> cad1153cd6d9246b75d8e60e4e64194d27a058a9
 
 Route::prefix('customers/')->middleware('login')->group(function(){
     Route::any('create/','Admin\CustomersController@create');//添加视图
