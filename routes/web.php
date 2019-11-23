@@ -34,6 +34,10 @@ Route::post('/admin/logindo','Admin\IndexController@logindo');
 //首页
 Route::prefix('/index')->middleware('login')->group(function(){
     Route::any('/index','Admin\IndexController@index');
+    Route::any('/create','Admin\IndexController@create');
+    Route::any('/save','Admin\IndexController@save');
+    Route::get('/list','Admin\IndexController@list');
+    Route::get('/delete/{id}','Admin\IndexController@delete');
 
 });
 
