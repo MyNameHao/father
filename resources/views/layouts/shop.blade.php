@@ -239,14 +239,7 @@
 								</li>
 
 
-								<li>
-									<a href="#" class="dropdown-toggle">
-										<i class="icon-double-angle-right"></i>
-
-										账号设置
-										<b class="arrow icon-angle-down"></b>
-									</a>
-									
+							</ul>
 						</li>
 
 						<li>
