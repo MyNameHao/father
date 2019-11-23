@@ -172,25 +172,20 @@
 
 							<ul class="submenu">
 								<li>
-									<a href="money.html">
+									<a href="{{url('/link/index')}}">
 										<i class="icon-double-angle-right"></i>
-										余额充值
+										联系人信息添加
 									</a>
 								</li>
 
 								<li>
-									<a href="recharge.html">
+									<a href="{{url('/link/list')}}">
 										<i class="icon-double-angle-right"></i>
-										充值记录
+										联系人展示页
 									</a>
 								</li>
                                 
-                                <li>
-									<a href="change.html">
-										<i class="icon-double-angle-right"></i>
-										密码设定
-									</a>
-								</li>
+
 							</ul>
 						</li>
 
