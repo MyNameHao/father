@@ -19,7 +19,7 @@ class LinkmanController extends Controller
         if($res){
             echo "<script>alert('添加成功');location='/link/list'</script>";
         }else{
-            echo "<script>alert('添加失败');location='/link/list'</script>";0
+            echo "<script>alert('添加失败');location='/link/list'</script>";
         }
 
     }
